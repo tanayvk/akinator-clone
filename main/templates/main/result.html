@@ -1,0 +1,9 @@
+{% extends 'main/base.html' %}
+{% block content %}
+  {% if possible %}
+  <p>You are {{ possible|join:" or " }}</p>
+  {% else %}
+  <p>I don't recognize you!</p>
+  {% endif %}
+  <a href="{% url 'start' %}">Start Again</a>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  {% if question %}
+    <h3>Question {{ question.id }}</h3>
+    <p>{{ question.question_text }}</p>
+    <form action="{% url 'submit-question' question.id %}" method="post">
+    {% csrf_token %}
+      <input type="radio" name="choice" id="yes" value="1" checked>
+      <label for="yes">Yes</label>
+      <input type="radio" name="choice" id="no" value="0">
+      <label for="no">No</label>
+      <input type="submit" value="Next!" />
+    </form>
+  {% else %}
+    <p>The requested question doesn't exist!</p>
+  {% endif %}
+{% endblock %}

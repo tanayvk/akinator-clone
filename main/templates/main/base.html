@@ -1,0 +1,13 @@
+{% load static %}
+<html>
+  <head>
+    <title>Akinator Clone</title>
+    <link href="{% static 'styles/main.css' %}" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
